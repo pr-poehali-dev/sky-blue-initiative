@@ -46,7 +46,7 @@ export function Hero3DStage() {
             transform: "translate(-50%, -30%)",
             width: "1200px",
             height: "800px",
-            background: "radial-gradient(ellipse at center, rgba(99, 102, 241, 0.08) 0%, transparent 70%)",
+            background: "radial-gradient(ellipse at center, rgba(88, 87, 255, 0.12) 0%, rgba(139, 92, 246, 0.08) 40%, transparent 70%)",
           }}
         />
 
@@ -77,14 +77,14 @@ export function Hero3DStage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="mt-8 flex items-center gap-6"
+                className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4"
               >
-                <button className="px-5 py-2.5 bg-white text-zinc-900 font-medium rounded-lg hover:bg-zinc-100 transition-colors text-sm">
-                  Начать работу
+                <button className="px-6 py-3 bg-gradient-to-r from-primary to-purple-600 text-white font-medium rounded-lg hover:opacity-90 transition-opacity text-sm shadow-lg shadow-primary/20">
+                  Начать бесплатно
                 </button>
-                <button className="text-zinc-300 font-medium hover:text-white transition-colors flex items-center gap-2 text-sm">
-                  <span className="text-zinc-500">Новинка:</span> Orbit-агент для Slack
-                  <span aria-hidden="true">→</span>
+                <button className="text-zinc-300 font-medium hover:text-white transition-colors flex items-center gap-2 text-sm group">
+                  <span className="text-zinc-500">Новинка:</span> Orbit AI для автоматизации
+                  <span aria-hidden="true" className="group-hover:translate-x-1 transition-transform">→</span>
                 </button>
               </motion.div>
             </div>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { ChevronRight, Plus } from "lucide-react"
+import Icon from '@/components/ui/icon'
 
 const featureCards = [
   {
@@ -118,7 +118,7 @@ export function FeatureCardsSection() {
                 Orbit основан на практиках и принципах, которые отличают лучшие продуктовые команды:
                 фокус на главном, быстрое исполнение и внимание к качеству.{" "}
                 <a href="#" className="text-white inline-flex items-center gap-1 hover:underline">
-                  Перейти на Orbit <ChevronRight className="w-4 h-4" />
+                  Перейти на Orbit <Icon name="ChevronRight" size={16} />
                 </a>
               </p>
             </motion.div>
@@ -155,8 +155,8 @@ export function FeatureCardsSection() {
                   style={{ padding: "0 24px 40px", gap: "16px" }}
                 >
                   <h3 className="text-white font-medium text-lg leading-tight">{card.title}</h3>
-                  <div className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-500 group-hover:border-zinc-500 group-hover:text-zinc-300 transition-colors flex-shrink-0">
-                    <Plus className="w-4 h-4" />
+                  <div className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-500 group-hover:border-primary group-hover:text-primary transition-colors flex-shrink-0">
+                    <Icon name="Plus" size={16} />
                   </div>
                 </div>
               </motion.div>

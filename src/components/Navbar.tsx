@@ -1,40 +1,56 @@
-import { CirclePower } from "lucide-react"
+import Icon from '@/components/ui/icon';
+import { useState, useEffect } from 'react';
 
 export function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800 bg-[#09090B]/80 backdrop-blur-md">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-background/80 backdrop-blur-xl border-b border-border/50'
+          : 'bg-transparent'
+      }`}
+    >
       <div className="w-full flex justify-center px-6 py-4">
-        <div className="w-full max-w-4xl flex items-center justify-between">
+        <div className="w-full max-w-6xl flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <CirclePower className="w-5 h-5 text-white" />
-            <span className="text-white font-semibold">Orbit</span>
+            <div className="w-7 h-7 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center">
+              <Icon name="Rocket" size={16} className="text-white" />
+            </div>
+            <span className="text-white font-semibold text-lg">Orbit</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
-            <a href="#" className="text-sm text-zinc-400 hover:text-white transition-colors">
+            <a href="#features" className="text-sm text-muted-foreground hover:text-white transition-colors">
+              Возможности
+            </a>
+            <a href="#product" className="text-sm text-muted-foreground hover:text-white transition-colors">
               Продукт
             </a>
-            <a href="#" className="text-sm text-zinc-400 hover:text-white transition-colors">
-              Ресурсы
+            <a href="#workflows" className="text-sm text-muted-foreground hover:text-white transition-colors">
+              Интеграции
             </a>
-            <a href="#" className="text-sm text-zinc-400 hover:text-white transition-colors">
+            <a href="#pricing" className="text-sm text-muted-foreground hover:text-white transition-colors">
               Тарифы
             </a>
-            <a href="#" className="text-sm text-zinc-400 hover:text-white transition-colors">
-              Клиенты
-            </a>
-            <a href="#" className="text-sm text-zinc-400 hover:text-white transition-colors">
-              Контакты
-            </a>
           </div>
-          <div className="flex items-center gap-4">
-            <a href="#" className="text-sm text-zinc-400 hover:text-white transition-colors">
+          <div className="flex items-center gap-3">
+            <a href="#" className="text-sm text-muted-foreground hover:text-white transition-colors">
               Войти
             </a>
             <a
               href="#"
-              className="text-sm text-white bg-zinc-800 hover:bg-zinc-700 px-3.5 py-1.5 rounded-md border border-zinc-700 transition-colors"
+              className="text-sm text-white bg-primary hover:bg-primary/90 px-4 py-2 rounded-lg transition-colors font-medium"
             >
-              Регистрация
+              Начать бесплатно
             </a>
           </div>
         </div>

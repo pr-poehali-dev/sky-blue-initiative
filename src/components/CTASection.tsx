@@ -10,8 +10,8 @@ export function CTASection() {
             <button className="px-5 py-2.5 border border-zinc-700 text-white font-medium rounded-lg hover:bg-zinc-800 transition-colors text-sm">
               Связаться с нами
             </button>
-            <button className="px-5 py-2.5 bg-white text-zinc-900 font-medium rounded-lg hover:bg-zinc-100 transition-colors text-sm">
-              Начать работу
+            <button className="px-6 py-3 bg-gradient-to-r from-primary to-purple-600 text-white font-medium rounded-lg hover:opacity-90 transition-opacity text-sm shadow-lg shadow-primary/20">
+              Начать бесплатно
             </button>
           </div>
         </div>
